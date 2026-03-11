@@ -1,0 +1,113 @@
+﻿.chat-input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.chat-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #0f172a;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+    .chat-input:focus {
+        border-color: #7c3aed;
+    }
+
+.chat-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+    .chat-btn:hover {
+        opacity: 0.88;
+    }
+
+    .chat-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+.chat-wrapper {
+    max-width: 100%;
+    width: 100%;
+    margin: 2rem auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    background: #fff;
+    box-sizing: border-box;
+}
+
+
+.chat-header {
+    margin-bottom: 1.5rem;
+}
+
+.chat-badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #7c3aed;
+    background: #f3f0ff;
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+}
+
+.chat-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0.75rem 0 0 0;
+}
+
+.chat-body {
+    min-height: 400px;
+    max-height: 500px;
+    overflow-y: auto;
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e2e8f0;
+}
+
+.chat-response {
+    color: #334155;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.chat-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+    .chat-btn:hover {
+        opacity: 0.88;
+    }

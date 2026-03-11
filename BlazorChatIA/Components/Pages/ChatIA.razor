@@ -1,0 +1,44 @@
+﻿@page "/chat"
+@rendermode InteractiveServer
+@inject IChatClient ChatClient
+
+<div class="p-3 w-100">
+
+    <div class="chat-wrapper">
+        <h3 class="chat-title">Chatbot IA - GPT-4o (OpenAI)</h3>
+
+        <div class="chat-body">
+            <p class="chat-response">@_response</p>
+        </div>
+
+        <div class="chat-input-area">
+            <input class="chat-input"
+                   @bind="_pergunta"
+                   @bind:event="oninput"
+                   placeholder="Digite sua pergunta..."
+                   style="font-weight: @(_pergunta.Length > 0 ? "bold" : "normal")" />
+            <button class="chat-btn" @onclick="InvokeLLM" disabled="@_carregando">
+                @(_carregando ? "Aguardando..." : "💬 Enviar")
+            </button>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    private string _response = "";
+    private string _pergunta = "";
+    private bool _carregando = false;
+
+    private async Task InvokeLLM()
+    {
+        _carregando = true;
+        _response = "";
+
+        var response = await ChatClient.GetResponseAsync(_pergunta);
+
+        _response = response.Messages.FirstOrDefault()?.Text ?? "Sem resposta";
+        _carregando = false;
+   }
+
+}
